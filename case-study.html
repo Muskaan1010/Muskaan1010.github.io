@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Product case study by Muskaan M D: shaping an enterprise RAG assistant around trustworthy, source-cited answers.">
+<title>Product Case Study | Muskaan M D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.case-hero{padding:66px 0 40px}.back{font-size:12px;color:#bcaaff;text-decoration:none}.case-hero h1{font:700 clamp(36px,6vw,60px)/1.1 'Space Grotesk';letter-spacing:-2px;max-width:850px;margin:25px 0 15px}.case-hero .intro{max-width:760px;color:#b0aecb;font-size:15px}.meta{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.meta span{font-size:11px;border:1px solid #ffffff1a;border-radius:30px;padding:7px 12px;color:#d5cef2}.case-layout{display:grid;grid-template-columns:1fr 280px;gap:28px;align-items:start}.case-content{min-width:0}.case-section{padding:23px 0;border-top:1px solid #ffffff18}.case-section h2{font:600 23px 'Space Grotesk';margin:0 0 12px}.case-section p,.case-section li{font-size:13px;color:#bcb9d2;line-height:1.85}.case-section ul{padding-left:20px}.side{position:sticky;top:95px;padding:20px}.side h3{font:600 14px 'Space Grotesk';margin:0 0 12px}.side a{display:block;text-decoration:none;color:#c4b8f4;font-size:11px;padding:7px 0}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.metric{padding:16px}.metric b{display:block;font:700 25px 'Space Grotesk';color:#c4b0ff}.metric small{font-size:10px;color:#aaa5c7}.metric em{display:block;font-size:9px;color:#8f8aa9;margin-top:5px;font-style:normal}.decision{padding:15px 17px;margin:12px 0;border-left:2px solid #9876f5;background:#ffffff08;border-radius:0 10px 10px 0}.decision b{font-size:12px;color:#e9e5ff}.decision p{margin:5px 0 0}.table-wrap{overflow-x:auto}.case-table{width:100%;border-collapse:collapse;font-size:11px}.case-table th,.case-table td{text-align:left;padding:11px;border-bottom:1px solid #ffffff18;vertical-align:top}.case-table th{color:#d9d1ff}.case-table td{color:#bcb9d2}.callout{padding:16px;border:1px solid #a48bff3b;border-radius:12px;background:#8b5cf612;color:#d5cff1;font-size:12px;line-height:1.8}.case-footer{padding:35px 0 55px}@media(max-width:800px){.case-layout{grid-template-columns:1fr}.side{position:static;order:-1}.metric-grid{grid-template-columns:1fr}.case-hero{padding-top:45px}}
+</style>
+</head>
+<body>
+<header><nav class="nav wrap"><a class="brand" href="index.html"><b>M</b> Muskaan<span>.</span></a><div class="links"><a href="index.html#about">About</a><a href="index.html#projects">Projects</a><a href="index.html#contact">Contact</a></div></nav></header>
+<main class="wrap">
+<section class="case-hero">
+<a class="back" href="index.html">← Back to portfolio</a>
+<p class="kicker" style="margin-top:28px">PRODUCT CASE STUDY · CONCEPT / PROJECT FRAMING</p>
+<h1>Making internal knowledge easier to find—and safer to trust.</h1>
+<p class="intro">A product-thinking walkthrough for the Enterprise RAG Assistant with Citation &amp; Guardrails. This case study translates the technical project into a user problem, an MVP, prioritization choices, and measurable product outcomes.</p>
+<div class="meta"><span>Role: Product case study author</span><span>Domain: Enterprise knowledge / AI</span><span>Project: Individual technical build</span></div>
+</section>
+<div class="case-layout">
+<article class="case-content">
+<section class="case-section" id="context"><h2>01. Context &amp; problem framing</h2>
+<p>Employees often need answers buried across internal documents. Searching manually can take time, and a general-purpose AI answer without evidence can be difficult to verify. The project explores a retrieval-augmented assistant that finds relevant passages and responds with citations, supported by input and output guardrails.</p>
+<div class="decision"><b>Product problem statement</b><p>How might we help employees find reliable answers from approved internal documents while making it easy to verify where each answer came from?</p></div>
+<p><strong>Important assumption:</strong> This is a proposed product framing based on the project's described capabilities, not the result of formal customer research. The problem should be validated with interviews and workflow observation before committing to a roadmap.</p>
+</section>
+<section class="case-section" id="users"><h2>02. Users &amp; jobs to be done</h2>
+<ul><li><strong>Primary user — knowledge worker:</strong> needs to locate a policy, process, or technical answer quickly and confirm the source.</li>
+<li><strong>Secondary user — team lead / knowledge owner:</strong> wants employees to use current, approved material and avoid unsupported claims.</li>
+<li><strong>Operational stakeholder — administrator:</strong> needs visibility into document coverage, retrieval quality, and failure patterns.</li></ul>
+<div class="decision"><b>Job to be done</b><p>When I have a work-related question, help me find the most relevant approved information and show the evidence, so I can act with confidence instead of searching through many documents.</p></div>
+</section>
+<section class="case-section" id="discovery"><h2>03. Discovery plan</h2>
+<p>Before expanding scope, I would validate the problem with a small discovery sprint:</p>
+<ul><li>Interview 5–8 target employees across at least two functions about how they currently find internal information.</li><li>Observe a few real information-seeking tasks and record time, search steps, and points of uncertainty.</li><li>Collect common question types and identify which document sources are authoritative and safe to use.</li><li>Test a clickable or working prototype with representative questions; ask users to rate answer usefulness and source clarity.</li></ul>
+<p><strong>Questions to answer:</strong> Which questions are frequent? Which sources are trusted? What counts as a sufficiently supported answer? When should the assistant abstain rather than answer?</p>
+</section>
+<section class="case-section" id="solution"><h2>04. Proposed MVP &amp; user journey</h2>
+<ol><li>User enters a question in plain language.</li><li>System checks the input and retrieves relevant passages from the approved document index.</li><li>Assistant generates an answer grounded in retrieved passages and attaches citations.</li><li>Output checks screen for unsupported or unsafe content before display.</li><li>User opens a citation to verify the source, or sees a clear “I couldn't find enough evidence” response.</li></ol>
+<div class="callout"><strong>MVP scope:</strong> document ingestion for a limited approved corpus, retrieval, cited responses, basic input/output guardrails, citation opening, and feedback capture. Defer complex permissions, multilingual support, broad integrations, and advanced analytics until the core workflow is validated.</div>
+</section>
+<section class="case-section" id="prioritization"><h2>05. Prioritization &amp; trade-offs</h2>
+<div class="table-wrap"><table class="case-table"><thead><tr><th>Capability</th><th>Priority</th><th>Reason</th></tr></thead><tbody>
+<tr><td>Relevant retrieval</td><td>Must have</td><td>Without useful source passages, answer quality is unreliable.</td></tr>
+<tr><td>Source citations</td><td>Must have</td><td>Supports verification and user trust.</td></tr>
+<tr><td>Input/output guardrails</td><td>Must have</td><td>Reduces unsafe or unsupported responses.</td></tr>
+<tr><td>Feedback capture</td><td>Should have</td><td>Creates a signal for diagnosing quality gaps.</td></tr>
+<tr><td>Advanced admin analytics</td><td>Later</td><td>Useful after usage patterns and operational needs are understood.</td></tr>
+<tr><td>Additional channels/integrations</td><td>Later</td><td>Expands reach but adds complexity before core value is proven.</td></tr>
+</tbody></table></div>
+<p>This is a qualitative first-pass prioritization. A real roadmap should compare user impact, confidence, effort, risk, and strategic fit with stakeholders.</p>
+</section>
+<section class="case-section" id="metrics"><h2>06. Success metrics &amp; experiment plan</h2>
+<p>The product should measure whether users find useful, verifiable answers—not simply how many answers the model generates. The figures below are <strong>proposed initial targets for an experiment</strong>, not achieved results or measured performance.</p>
+<div class="metric-grid">
+<div class="glass metric"><b>≥70%</b><small>Task completion</small><em>Proposed pilot target</em></div>
+<div class="glass metric"><b>≥85%</b><small>Citation relevance</small><em>Proposed evaluation target</em></div>
+<div class="glass metric"><b>−20%</b><small>Time to find an answer</small><em>Proposed vs. baseline</em></div>
+</div>
+<div class="table-wrap"><table class="case-table"><thead><tr><th>Metric</th><th>Definition</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td>Task completion rate</td><td>Share of pilot tasks where users confirm they found a usable answer.</td><td>Measures whether the product solves the job.</td></tr>
+<tr><td>Citation relevance</td><td>Share of sampled citations judged to support the associated claim.</td><td>Measures evidence quality and verifiability.</td></tr>
+<tr><td>Time to answer</td><td>Median time from question to user-confirmed answer, compared with current workflow.</td><td>Measures efficiency improvement.</td></tr>
+<tr><td>Abstention quality</td><td>Share of insufficient-evidence cases where the assistant correctly declines to answer.</td><td>Measures whether guardrails avoid false confidence.</td></tr>
+<tr><td>Repeat usage</td><td>Share of pilot users returning to complete another knowledge task.</td><td>Signals recurring usefulness.</td></tr>
+</tbody></table></div>
+<p><strong>Experiment:</strong> Run a time-boxed pilot with representative tasks. Establish a manual-search baseline, compare it with assistant-assisted tasks, review answer and citation quality with human evaluators, and interview users about trust and friction. Segment results by question type and document source.</p>
+</section>
+<section class="case-section" id="risks"><h2>07. Risks &amp; mitigations</h2>
+<ul><li><strong>Incorrect or incomplete source material:</strong> show document title/date and provide a content-owner process for updating the index.</li><li><strong>Unsupported generated claims:</strong> require evidence checks and a clear abstention path when retrieval confidence is insufficient.</li><li><strong>Access-control leakage:</strong> enforce document permissions during retrieval; validate this before any real enterprise deployment.</li><li><strong>Low adoption:</strong> integrate into an existing workflow only after discovery confirms where users need it most.</li><li><strong>Misleading metrics:</strong> combine quantitative measures with human review and user interviews.</li></ul>
+</section>
+<section class="case-section" id="reflection"><h2>08. What I would do next</h2>
+<p>My next step would be to validate the highest-frequency knowledge tasks, define a representative evaluation set, and establish a baseline for current search time and answer confidence. I would then prioritize improvements based on observed failure patterns—such as poor retrieval, missing citations, stale documents, or unclear abstentions—rather than adding features without evidence.</p>
+<div class="callout"><strong>Product takeaway:</strong> The value is not “AI answers questions.” The value is helping people complete information tasks faster while retaining the ability to verify the answer and understand when the system does not know.</div>
+</section>
+</article>
+<aside class="glass side"><h3>On this page</h3>
+<a href="#context">01 · Problem framing</a><a href="#users">02 · Users &amp; JTBD</a><a href="#discovery">03 · Discovery plan</a><a href="#solution">04 · MVP &amp; journey</a><a href="#prioritization">05 · Prioritization</a><a href="#metrics">06 · Success metrics</a><a href="#risks">07 · Risks</a><a href="#reflection">08 · Next steps</a>
+<hr style="border:0;border-top:1px solid #ffffff18;margin:14px 0">
+<p style="font-size:10px;color:#9d98b8;line-height:1.7">This is a portfolio case study and proposed product plan. It does not claim formal user research, shipped product outcomes, or achieved metric targets.</p>
+<a href="index.html#contact">Contact Muskaan ↗</a></aside>
+</div>
+<div class="case-footer"><a class="primary" href="index.html#projects">Back to projects ↗</a></div>
+</main>
+<footer class="footer wrap"><a class="brand" href="index.html"><b>M</b> Muskaan<span>.</span></a><p>© <span id="year"></span> Muskaan M D</p><a href="#">Back to top ↑</a></footer>
+<script src="script.js"></script>
+</body></html>
